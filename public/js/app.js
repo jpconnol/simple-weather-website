@@ -4,8 +4,6 @@ const messageOne = document.querySelector('#mone')
 const messageTwo = document.querySelector('#mtwo')
 
 
-
-
 formInput.addEventListener('submit', (e) => {
     e.preventDefault()
     const location = search.value
@@ -13,7 +11,7 @@ formInput.addEventListener('submit', (e) => {
     messageOne.textContent = ''
     messageTwo.textContent = 'Loading...'
 
-    fetch(`http://localhost:3000/weather?address=${location}`).then((res) => {
+    fetch(`/weather?address=${location}`).then((res) => {
         res.json().then((data) => {
             if(data.error){
                  messageOne.textContent = data.error
